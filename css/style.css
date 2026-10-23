@@ -1,0 +1,15 @@
+/* Deux couleurs : bleu fonce et gris clair */
+body { background-color: #eef3f8; }
+
+h1, h3 { color: #1f4e79; }
+
+.table thead th {
+  background-color: #1f4e79;
+  color: white;
+}
+
+/* Telephone */
+@media (max-width: 768px) {
+  h1 { font-size: 1.4rem; }
+  .table { font-size: 0.85rem; }
+}
