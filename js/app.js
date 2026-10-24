@@ -1,12 +1,12 @@
 // Chef d'orchestre : initialisation + evenements
 import { state } from "./state.js";
-import { loadAllData } from "./dataService.js";
+import { loadAllData } from "./dataservices.js";
 import { render, fillCategories, showError, showOrderDetail } from "./view.js";
  
 // Initialisation : charger -> remplir le state -> premier rendu
 async function init() {
   try {
-    const data = await loadAllData();
+   const data = await loadAllData();
  
     state.customers = data.customers;
     state.products = data.products;
@@ -14,12 +14,14 @@ async function init() {
  
     fillCategories(state);
     render(state);
-  } catch (error) {
-    showError("Erreur : les donnees n'ont pas pu etre chargees. Voir la console (F12).");
-  }
+  } 
+  catch (error) {
+    console.error("Erreur de chargement :", error);
+    showError("Impossible de charger les donnees. Verifiez les fichiers JSON et lancez le projet avec Live Server.");
+}
 }
  
-// Recherche : modifier le state puis render()
+// Recherche 
 document.querySelector("#searchInput").addEventListener("input", event => {
   state.search = event.target.value;
   render(state);

@@ -1,10 +1,10 @@
-/* Deux couleurs : bleu fonce et gris clair */
-body { background-color: #eef3f8; }
 
-h1, h3 { color: #1f3779; }
+body { background-color: #6fec1ce3; }
+
+h1, h3 { color: #85240ce8; }
 
 .table thead th {
-  background-color: #1f4e79;
+  background-color: #85240ce8;
   color: white;
 }
 
